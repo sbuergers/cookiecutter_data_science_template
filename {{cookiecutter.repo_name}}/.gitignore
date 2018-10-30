@@ -6,6 +6,8 @@
 *.xml
 *.json
 
+data/
+
 # Doc types
 *.txt
 *.pdf
