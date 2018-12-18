@@ -33,10 +33,10 @@ data/
 {%- if cookiecutter.language|lower == "r" %}
 
 #R stuff
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Ruserdata
 
 {%- endif %}
 
