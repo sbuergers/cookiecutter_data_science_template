@@ -37,6 +37,8 @@ data/
 *.Rhistory
 *.RData
 *.Ruserdata
+*.Rda
+*.Rds
 
 {%- endif %}
 
