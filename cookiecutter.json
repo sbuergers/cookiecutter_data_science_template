@@ -3,8 +3,9 @@
     "reviewer_1": "Fenno",
     "reviewer_2": "",
     "email": "info@ynformed.com",
+    "language": "python",
     "repo_name": "Hello world",
     "project_short_description": "Data Science",
-    "version": "0.1.0",
-    "language": "python"
+    "pkg_name": "not applicable",
+    "version": "0.1.0"
 }
