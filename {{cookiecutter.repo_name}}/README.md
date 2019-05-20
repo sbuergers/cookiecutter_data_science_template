@@ -34,3 +34,25 @@ If you want to develop in a notebook, you will also need to reload the {{cookiec
 This will reload {{cookiecutter.pkg_name}} everytime you run a new cell. The third line is optional: if you leave it out, you will reload every import every cell, instead of only those from {{cookiecutter.pkg_name}}.
 
 {%- endif %}
+
+
+{%- if cookiecutter.documentation == 'y' or cookiecutter.language|lower != "python"%}
+
+# Documentation
+
+Building the documentation can be done through the following command within the main directory:
+
+```
+sphinx-build -b html ./docs/source/ ./docs/build/
+```
+
+You will need to have the following packages:
+```
+pip install Sphinx==1.8.5
+pip install sphinx_rtd_theme
+pip install recommonmark
+pip install numpydoc
+```
+
+Sphinx 2.0 is currently still broken when used together with numpydoc.
+{%- endif %}
