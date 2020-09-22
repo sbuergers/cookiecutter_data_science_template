@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.abspath('../../'))
 # -- Project information -----------------------------------------------------
 
 project = '{{cookiecutter.repo_name}}'
-copyright = '2019, Ynformed'
+copyright = '2020, RHDHV'
 author = '{{cookiecutter.full_name}}'
 
 # The short X.Y version

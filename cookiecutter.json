@@ -1,8 +1,8 @@
 {
-    "full_name": "Ynformer",
-    "reviewer_1": "Fenno",
+    "full_name": "DDC Person",
+    "reviewer_1": "Someone Else",
     "reviewer_2": "",
-    "email": "info@ynformed.com",
+    "email": "info@example.com",
     "language": "python",
     "repo_name": "Hello world",
     "project_short_description": "Data Science",
