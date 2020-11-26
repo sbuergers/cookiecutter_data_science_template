@@ -14,7 +14,7 @@ def remove(filepath):
 
 
 pkg_name = '{{cookiecutter.pkg_name}}'
-language = '{{cookiecutter.language}}'
+language = '{{cookiecutter.language}}'.lower()
 
 
 if (pkg_name == 'not applicable') | (language != 'python'):
@@ -27,18 +27,18 @@ else:
     remove(os.path.join(os.getcwd(), 'src'))
 
 
-if language.lower() == 'r':
+if language == 'r':
     remove(os.path.join(os.getcwd(),  'setup.cfg'))
     remove(os.path.join(os.getcwd(),  'conftest.py'))
     remove(os.path.join(os.getcwd(),  'pipelines/lint-python.yaml'))
     remove(os.path.join(os.getcwd(),  'pipelines/test-python.yaml'))
 
-if language.lower() == 'python':
+if language == 'python':
     print("Please create new 'Pipelines' in Azure Devops, and use the existing pipeline files "
           "found in the pipeline folder. A pipeline for each .yaml.")
 
-if ('{{cookiecutter.documentation}}' != 'y') | (language.lower() == 'r'):
-    if language.lower() == "r":
+if ('{{cookiecutter.documentation}}' != 'y') | (language == 'r'):
+    if language == "r":
         print('The RHDHV DDC cookiecutter part for automatic documentation in R is currently '
               'not supported.')
     print("Removing documentation files...")
