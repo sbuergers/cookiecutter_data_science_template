@@ -1,7 +1,7 @@
 import os
 import shutil
 
-print(os.getcwd())
+print(f"Created the project in: {os.getcwd()}")
 
 # https://github.com/audreyr/cookiecutter/issues/723
 
@@ -18,19 +18,24 @@ language = '{{cookiecutter.language}}'
 
 
 if (pkg_name == 'not applicable') | (language != 'python'):
-    print("Removing package files...")
     remove(os.path.join(os.getcwd(), '{{cookiecutter.pkg_name}}'))
     remove(os.path.join(os.getcwd(),  'setup.py'))
-
+    remove(os.path.join(os.getcwd(),  'pipelines/build-python-package.yaml'))
 else:
-    print("Removing src files...")
+    print("Please follow the instructions in 'pipelines/build-python-package.yaml' "
+          "to set up an automatic package build")
     remove(os.path.join(os.getcwd(), 'src'))
 
 
 if language.lower() == 'r':
-    print("Removing python linting...")
-    remove(os.path.join(os.getcwd(), '.arclint'))
     remove(os.path.join(os.getcwd(),  'setup.cfg'))
+    remove(os.path.join(os.getcwd(),  'conftest.py'))
+    remove(os.path.join(os.getcwd(),  'pipelines/lint-python.yaml'))
+    remove(os.path.join(os.getcwd(),  'pipelines/test-python.yaml'))
+
+if language.lower() == 'python':
+    print("Please create new 'Pipelines' in Azure Devops, and use the existing pipeline files "
+          "found in the pipeline folder. A pipeline for each .yaml.")
 
 if ('{{cookiecutter.documentation}}' != 'y') | (language.lower() == 'r'):
     if language.lower() == "r":
