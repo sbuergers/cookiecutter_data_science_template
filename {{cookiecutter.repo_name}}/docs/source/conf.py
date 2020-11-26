@@ -50,7 +50,7 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.viewcode',
     'numpydoc'
-   # 'sphinx_markdown_tables',
+    # 'sphinx_markdown_tables',
 ]
 
 # numpydoc_show_class_members = False
@@ -58,9 +58,9 @@ autoclass_content = 'both'
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['ntemplates']
 
-#source_parsers = {
-#	'.md': CommonMarkParser,
-#}
+# source_parsers = {
+#    '.md': CommonMarkParser,
+# }
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -101,7 +101,7 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-#html_static_path = ['_static']
+# html_static_path = ['_static']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

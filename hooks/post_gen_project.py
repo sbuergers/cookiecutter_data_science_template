@@ -47,6 +47,3 @@ if ('{{cookiecutter.documentation}}' != 'y') | (language.lower() == 'r'):
 else:
     print('For information on how to create documentation, please see the DDC wiki:')
     print('https://wikiddc.corporateroot.net/doku.php?id=python_styleguide#documentation')
-
-
-
