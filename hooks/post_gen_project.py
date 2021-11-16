@@ -1,6 +1,10 @@
 import os
 
 
+if '{{cookiecutter.language}}' != 'python':
+    raise ValueError('Only python is currently supported by this cookiecutter template')
+
+
 print(f"COOKIECUTTER Created the project in: {os.getcwd()}")
 
 
@@ -10,7 +14,7 @@ if '{{cookiecutter.repo_name}}' == 'template_repo':
 
 if '{{cookiecutter.pkg_name}}' == 'template_pkg':
     print('We highly encourage you to change the default package name!')
-
+    
 
 print("Please create new 'Pipelines' in Azure Devops, and use the existing pipeline files "
       "found in the pipeline folder. A pipeline for each .yaml.")
