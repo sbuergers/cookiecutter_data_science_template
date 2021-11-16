@@ -77,13 +77,12 @@ Sphinx 2.0 is currently still broken when used together with numpydoc.
     │   ├── data_sources   <- Scripts to download or generate data
     │   │   └── make_dataset.py
     │   │
-    │   ├── preprocessing  <- Scripts to preprocess data from `data_sources` to obtain features for ML
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
+    │   ├── models         <- Scripts to train models and then use trained models to make predictions
     │   │   ├── predict.py
     │   │   └── train.py
+    │   │
+    │   ├── preprocessing  <- Scripts to preprocess data from `data_sources` to obtain features for ML
+    │   │   └── build_features.py
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
     │       └── visualize.py
@@ -93,8 +92,6 @@ Sphinx 2.0 is currently still broken when used together with numpydoc.
     │
     ├── docs               <- A default Sphinx project to create web pages with docs; 
     |                         see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
@@ -112,9 +109,9 @@ Sphinx 2.0 is currently still broken when used together with numpydoc.
     │   └── test-python.yaml
     |
     ├── references         <- All useful documents, manuals and meta-files related to the project.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
+    |
+    ├── run                <- Contains script to run the model and create final output.
+    │   └── configs        <- Various config files, e.g. one used for production, one for testing.
     |
     ├── tests              <- Include all unit and integration tests here.
     |
@@ -124,11 +121,11 @@ Sphinx 2.0 is currently still broken when used together with numpydoc.
     |
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt` (if in a hurry)
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so cto package can be imported
-    |                         Add the necessary dependencies here as well!
     |
     ├── setup.cfg          <- sets standard linting options of RHDHV Data Solutions (called by setup.py)
+    |
+    ├── setup.py           <- makes project pip installable (pip install -e .) so cto package can be imported
+                              Add the necessary dependencies here as well!
 
 # Code of Conduct
 
