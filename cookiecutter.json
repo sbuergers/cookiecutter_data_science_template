@@ -3,9 +3,10 @@
     "reviewer_1": "Someone Else",
     "reviewer_2": "",
     "email": "info@example.com",
+    "language": "python",
     "repo_name": "template_repo",
     "project_short_description": "Data Science",
-    "pkg_name": "not applicable",
+    "pkg_name": "template_pkg",
     "documentation": "y",
     "version": "0.1.0"
 }
