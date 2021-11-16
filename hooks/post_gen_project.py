@@ -1,49 +1,24 @@
 import os
-import shutil
-
-print(f"Created the project in: {os.getcwd()}")
-
-# https://github.com/audreyr/cookiecutter/issues/723
 
 
-def remove(filepath):
-    if os.path.isfile(filepath):
-        os.remove(filepath)
-    elif os.path.isdir(filepath):
-        shutil.rmtree(filepath)
+print(f"COOKIECUTTER Created the project in: {os.getcwd()}")
 
 
-pkg_name = '{{cookiecutter.pkg_name}}'
-language = '{{cookiecutter.language}}'.lower()
+if '{{cookiecutter.repo_name}}' == 'template_repo':
+    print('We highly encourage you to change the default repository name!')
 
 
-if (pkg_name == 'not applicable') | (language != 'python'):
-    remove(os.path.join(os.getcwd(), '{{cookiecutter.pkg_name}}'))
-    remove(os.path.join(os.getcwd(),  'setup.py'))
-    remove(os.path.join(os.getcwd(),  'pipelines/build-python-package.yaml'))
-else:
-    print("Please follow the instructions in 'pipelines/build-python-package.yaml' "
-          "to set up an automatic package build")
-    remove(os.path.join(os.getcwd(), 'src'))
+if '{{cookiecutter.pkg_name}}' == 'template_pkg':
+    print('We highly encourage you to change the default package name!')
 
 
-if language == 'r':
-    remove(os.path.join(os.getcwd(),  'setup.cfg'))
-    remove(os.path.join(os.getcwd(),  'conftest.py'))
-    remove(os.path.join(os.getcwd(),  'pipelines/lint-python.yaml'))
-    remove(os.path.join(os.getcwd(),  'pipelines/test-python.yaml'))
+print("Please create new 'Pipelines' in Azure Devops, and use the existing pipeline files "
+      "found in the pipeline folder. A pipeline for each .yaml.")
 
-if language == 'python':
-    print("Please create new 'Pipelines' in Azure Devops, and use the existing pipeline files "
-          "found in the pipeline folder. A pipeline for each .yaml.")
 
-if ('{{cookiecutter.documentation}}' != 'y') | (language == 'r'):
-    if language == "r":
-        print('The RHDHV DDC cookiecutter part for automatic documentation in R is currently '
-              'not supported.')
+if '{{cookiecutter.documentation}}' != 'y':
     print("Removing documentation files...")
-    remove(os.path.join(os.getcwd(), 'docs', 'source'))
-    remove(os.path.join(os.getcwd(), 'docs', 'build'))
+    os.rmdir(os.path.join(os.getcwd(), 'docs'))
 else:
     print('For information on how to create documentation, please see the DDC wiki:')
     print('https://wikiddc.corporateroot.net/doku.php?id=python_styleguide#documentation')
