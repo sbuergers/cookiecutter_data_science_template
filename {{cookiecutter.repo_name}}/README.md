@@ -71,21 +71,20 @@ Sphinx 2.0 is currently still broken when used together with numpydoc.
 
 # Project Organization
 
-    ├── cto                <- Source code for use in this project, replace name with package name
+    ├── {{pkg_name}}       <- Source code for use in this project (for python, deleted when R is selected)
     │   ├── __init__.py    <- Makes cto a Python module
     │   │
     │   ├── data_sources   <- Scripts to download or generate data
-    │   │   └── make_dataset.py
+    │   │   └── __init__.py
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make predictions
-    │   │   ├── predict.py
-    │   │   └── train.py
+    │   │   └── __init__.py
     │   │
     │   ├── preprocessing  <- Scripts to preprocess data from `data_sources` to obtain features for ML
-    │   │   └── build_features.py
+    │   │   └── __init__.py
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
+    │       └── __init__.py
     |
     ├── data               <- Hidden from source control
     │   └── raw_immutable  <- The original, immutable data dump.
@@ -113,9 +112,15 @@ Sphinx 2.0 is currently still broken when used together with numpydoc.
     ├── run                <- Contains script to run the model and create final output.
     │   └── configs        <- Various config files, e.g. one used for production, one for testing.
     |
+    ├── pipelines          <- Similar structure to {{pkg_name}}, but for R (deleted when python is selected)
+    │   ├── data_sources   <- Scripts to download or generate data
+    │   ├── models         <- Scripts to train models and then use trained models to make predictions
+    │   ├── preprocessing  <- Scripts to preprocess data from `data_sources` to obtain features for ML
+    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+    |
     ├── tests              <- Include all unit and integration tests here.
     |
-    ├── conftest.py        <- Necessary for smooth integration of coverage reports
+    ├── conftest.py        <- Necessary for smooth integration of coverage reports (only python)
     │
     ├── README.md          <- The top-level README for developers using this project.
     |
@@ -124,8 +129,8 @@ Sphinx 2.0 is currently still broken when used together with numpydoc.
     |
     ├── setup.cfg          <- sets standard linting options of RHDHV Data Solutions (called by setup.py)
     |
-    ├── setup.py           <- makes project pip installable (pip install -e .) so cto package can be imported
-                              Add the necessary dependencies here as well!
+    ├── setup.py           <- makes project pip installable (pip install -e .) so package can be imported
+                              Add the necessary dependencies here as well! Only for python language.
 
 # Code of Conduct
 
